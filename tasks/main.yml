@@ -4,11 +4,6 @@
   set_fact:
     certificate_path: /etc/elasticsearch/{{es_first_instance_name}}/elastic-certificates.p12
 
-- name: set ES_PATH_CONF
-  lineinfile:
-    path: /etc/sysconfig/elasticsearch
-    line: ES_PATH_CONF=/etc/elasticsearch/{{es_first_instance_name}}
-
 - name: remove existing certificate if override is desired
   file:
     state: absent
@@ -24,6 +19,11 @@
   debug:
     msg: The certificate file already exists in path {{ certificate_path }}.
   when: certificate_file_stats.stat.exists
+
+- name: set ES_PATH_CONF
+  lineinfile:
+    path: /etc/sysconfig/elasticsearch
+    line: ES_PATH_CONF=/etc/elasticsearch/{{es_first_instance_name}}
 
 - name: generate certificate file and set its permissions
   include: generate_certificate_file.yml
