@@ -1,0 +1,9 @@
+- name: generate certificate with certutil
+  command: sh /usr/share/elasticsearch/bin/elasticsearch-certutil cert --out {{ certificate_path }} --pass ""
+
+- name: set certificate file permissions
+  become_user: elasticsearch
+  file:
+    path: "{{ certificate_path }}"
+    owner: "{{ es_user }}"
+    mode: 0640
