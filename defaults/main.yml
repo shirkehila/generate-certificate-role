@@ -4,3 +4,4 @@
 es_first_instance_name: main
 es_user: elasticsearch
 override_existing_certificate: false
+certificate_file_name: elastic-certificates.p12

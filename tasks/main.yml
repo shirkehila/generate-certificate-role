@@ -2,7 +2,7 @@
 # tasks file for generate-certificate
 - name: set certificate path
   set_fact:
-    certificate_path: /etc/elasticsearch/{{es_first_instance_name}}/elastic-certificates.p12
+    certificate_path: /etc/elasticsearch/{{es_first_instance_name}}/{{certificate_file_name}}
 
 - name: remove existing certificate if override is desired
   file:
