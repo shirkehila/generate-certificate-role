@@ -13,7 +13,7 @@ Role Variables
 
 variable name | type | description | default value
 ------------- | -------- | ------------------------ | -------------
-es_instance_name | string | name of the elastic instance that will generate the certificate, not including server name and hyphen | main
+es_generator_instance_name | string | name of the elastic instance that will generate the certificate, not including server name and hyphen | main
 override_existing_certificate | boolean | set to true to override existing certificate | false
 es_user | string | elasticsearch built in user | elasticsearch
 
