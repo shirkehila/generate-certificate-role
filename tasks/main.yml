@@ -20,17 +20,6 @@
     msg: The certificate file already exists in path {{ certificate_path }}.
   when: certificate_file_stats.stat.exists
 
-- name: set ES_PATH_CONF
-  lineinfile:
-    path: /etc/sysconfig/elasticsearch
-    line: ES_PATH_CONF=/etc/elasticsearch/{{es_generator_instance_name}}
-
 - name: generate certificate file and set its permissions
   include: generate_certificate_file.yml
   when: not certificate_file_stats.stat.exists
-
-- name: unset ES_PATH_CONF
-  lineinfile:
-    path: /etc/sysconfig/elasticsearch
-    state: absent
-    line: ES_PATH_CONF=/etc/elasticsearch/{{es_generator_instance_name}}
