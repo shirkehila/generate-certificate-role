@@ -31,7 +31,7 @@ Playbook:
       roles:
         - role: generate-certificate
       vars:
-        es_instance_name: main
+        es_generator_instance_name: main
         override_existing_certificate: true
         
 Inventory:
