@@ -37,7 +37,7 @@ Playbook:
 Inventory:
 
     [generator]
-    elastic-server
+    elastic-server1
 
 
 License
