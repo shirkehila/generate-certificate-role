@@ -48,4 +48,4 @@ BSD
 Author Information
 ------------------
 
-Just a frustrated user who didn't want to do this by hand.
+Just a frustrated user who didn't want to do this manually.
